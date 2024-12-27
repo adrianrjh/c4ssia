@@ -7,9 +7,6 @@ import pandas as pd
 sys.path.insert(0, '/home/adrian/ws/wave/cassia/libs')
 from common3 import *
 import csv
-from twilio.rest import Client
-
-client = Client(account_sid, auth_token)
 
 async def addList(q: Q, list: ings, array: nombings):
     global nombings, columns3
@@ -141,8 +138,6 @@ async def resets(q: Q):
             if found==0:    
                 pass
             found=0
-
-        message = client.messages.create(body='Hi Charly bby <3',from_='+19402408050',to='+523133298336')
 
         await q.run(showList,q)
         
